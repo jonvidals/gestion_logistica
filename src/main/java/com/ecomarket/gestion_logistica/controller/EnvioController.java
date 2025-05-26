@@ -1,7 +1,9 @@
 package com.ecomarket.gestion_logistica.controller;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,4 +53,15 @@ public class EnvioController {
         return ResponseEntity.ok(actualizado);
     }
     
-}
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<String> eliminarEnvio(@RequestBody Envio envio, @PathVariable Integer id){
+        Usuario userActual = usuarioService.getUserById(id);
+        if (userActual == null || userActual.getRol() != 4 ){
+            return ResponseEntity.status(403).build();
+
+        }
+        envioService.deleteEnvio(envio.getId());
+        return ResponseEntity.ok("Usuario eliminado con éxito");
+
+    }   
+} 
