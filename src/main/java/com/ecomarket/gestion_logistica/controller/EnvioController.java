@@ -64,4 +64,32 @@ public class EnvioController {
         return ResponseEntity.ok("Usuario eliminado con éxito");
 
     }   
+
+        /*@PutMapping("/actualizarEstado/{id}")
+    public ResponseEntity<Envio> actualizarEstadoEnvio(@RequestBody Envio envio, @PathVariable Integer id) {
+        Usuario userActual = usuarioService.getUserById(id);
+        if (userActual == null || userActual.getRol() != 4) {
+            return ResponseEntity.status(403).build();
+        }
+        Envio envioExistente = envioService.updateEnvio(envio);
+        if (envioExistente != null) {
+            return ResponseEntity.ok(envioExistente);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }*/
+
+    /*@PutMapping("/reprogramarFecha/{id}")   
+    public ResponseEntity<Envio> reprogramarFechaEnvio(@RequestBody Envio envio, @PathVariable Integer id) {
+        Usuario userActual = usuarioService.getUserById(id);
+        if (userActual == null || userActual.getRol() != 4) {
+            return ResponseEntity.status(403).build();
+        }
+        Envio envioExistente = envioService.updateEnvio(envio);
+        if (envioExistente != null) {
+            return ResponseEntity.ok(envioExistente);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }*/
 } 
