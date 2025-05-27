@@ -1,5 +1,8 @@
 package com.ecomarket.gestion_logistica.model;
+import java.time.LocalDate;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,8 +28,9 @@ public class Envio {
 
     private String direccionDestino;
 
-    private String fechaEnvio;
-
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    private LocalDate fechaEnvio;
+    
     private String estadoEnvio;
     
     @JsonBackReference

@@ -31,6 +31,7 @@ public class EnvioService {
                 if (envio.getEstadoEnvio() != null) {
                     envioExistente.setEstadoEnvio(envio.getEstadoEnvio());
                 }
+                // Agrega aquí otros campos según tu modelo Envio
                 envioRepository.save(envioExistente);
                 return envioExistente;
             }

@@ -64,8 +64,7 @@ public class EnvioController {
         return ResponseEntity.ok("Usuario eliminado con éxito");
 
     }   
-
-        /*@PutMapping("/actualizarEstado/{id}")
+    /*@PutMapping("/actualizarEstado/{id}")
     public ResponseEntity<Envio> actualizarEstadoEnvio(@RequestBody Envio envio, @PathVariable Integer id) {
         Usuario userActual = usuarioService.getUserById(id);
         if (userActual == null || userActual.getRol() != 4) {
@@ -92,4 +91,4 @@ public class EnvioController {
             return ResponseEntity.notFound().build();
         }
     }*/
-} 
+}
